@@ -1,0 +1,14 @@
+.search {
+    position: relative;
+}
+
+.search-popup {
+    width: 288px;
+
+    position: absolute;
+    right: 0;
+}
+
+.search:hover {
+
+}

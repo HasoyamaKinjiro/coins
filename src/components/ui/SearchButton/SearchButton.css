@@ -1,0 +1,27 @@
+.search-button {
+    padding: 4px 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    border-radius: 8px;
+
+    color: var(--text-color);
+    font-family: IBMPlexMonoRegular;
+    text-transform: uppercase;
+}
+
+.search-button:hover {
+    background-color: var(--bg-color-hover);
+}
+
+.search-button_open {
+    background-color: var(--bg-color-hover);
+    border: var(--border-color) solid 2px;
+}
+
+.search-button_closed {
+    background: transparent;
+    border: var(--border-color) solid 1px
+}

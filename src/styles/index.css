@@ -5,15 +5,15 @@
 }
 
 body {
-  background: #000804;
+  background: var(--bg-color);
 }
 
-input[type="text"] {
+/*input[type="text"] {
   all: unset;
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
-}
+}*/
 
 button {
   background: none;
@@ -29,22 +29,26 @@ button {
   appearance: none;
 }
 
+ul, ol {
+  list-style: none;
+}
+
 @font-face {
   font-family: IBMPlexMonoRegular;
-  src: url('./assets/fonts/IBMPlexMono-Regular.ttf');
+  src: url('../assets/fonts/IBMPlexMono-Regular.ttf');
 }
 
 @font-face {
   font-family: IBMPlexMonoMedium;
-  src: url('./assets/fonts/IBMPlexMono-Medium.ttf');
+  src: url('../assets/fonts/IBMPlexMono-Medium.ttf');
 }
 
 @font-face {
   font-family: IBMPlexMonoSemiBold;
-  src: url('./assets/fonts/IBMPlexMono-SemiBold.ttf');
+  src: url('../assets/fonts/IBMPlexMono-SemiBold.ttf');
 }
 
 @font-face {
   font-family: IBMPlexMonoBold;
-  src: url('./assets/fonts/IBMPlexMono-Bold.ttf');
+  src: url('../assets/fonts/IBMPlexMono-Bold.ttf');
 }
