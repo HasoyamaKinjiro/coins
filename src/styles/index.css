@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000804;
+}
+
+input[type="text"] {
+  all: unset;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@font-face {
+  font-family: IBMPlexMonoRegular;
+  src: url('./assets/fonts/IBMPlexMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: IBMPlexMonoMedium;
+  src: url('./assets/fonts/IBMPlexMono-Medium.ttf');
+}
+
+@font-face {
+  font-family: IBMPlexMonoSemiBold;
+  src: url('./assets/fonts/IBMPlexMono-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: IBMPlexMonoBold;
+  src: url('./assets/fonts/IBMPlexMono-Bold.ttf');
+}
