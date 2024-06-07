@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import IconsSvg from '../../assets/icons.svg';
-import {CoinI} from '../../types';
 
 interface CoinProps {
     name: string;
-    favorite: boolean;
     isFavorite: boolean;
     toggleFavorite: () => void;
 }
 
-const Coin = ({ name, favorite, isFavorite, toggleFavorite }: CoinProps) => {
-    /*const [isFavorite, setIsFavorite] = useState(favorite);*/
-
+const Coin = ({ name, isFavorite, toggleFavorite }: CoinProps) => {
     return (
         <li className="coins-li"
             onClick={toggleFavorite}
