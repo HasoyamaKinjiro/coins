@@ -145,7 +145,7 @@ export default [
         "id": 29
     },
     {
-        "name": "",
+        "name": "SUP",
         "favorite": false,
         "id": 30
     },

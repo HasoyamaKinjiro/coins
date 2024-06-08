@@ -10,7 +10,7 @@ interface VirtualListProps<T> {
 const VirtualList = <T,>({ items, itemHeight, renderItem, showFavorites }: VirtualListProps<T>) => {
     const rootRef = useRef<HTMLUListElement>(null);
     const [start, setStart] = useState(0);
-    const visibleRows = 9;
+    const visibleRows = 8;
 
     const onScroll = useCallback((e: any) => {
         setStart(Math.floor(e.target.scrollTop / itemHeight));

@@ -70,7 +70,7 @@ const SearchList = ({ coins }: SearchListProps) => {
             {filteredCoins.length > 0 ? (
                 <VirtualList
                     items={filteredCoins}
-                    itemHeight={28}
+                    itemHeight={39}
                     renderItem={renderCoinItem}
                     showFavorites={showFavorites}
                 />
