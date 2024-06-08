@@ -32,6 +32,8 @@
     font-size: 16px;
     font-family: IBMPlexMonoRegular;
     text-transform: uppercase;
+
+    user-select: none;
 }
 
 .search-list_btn:hover {
