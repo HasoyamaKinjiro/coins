@@ -4,17 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background: var(--bg-color);
-}
-
-/*input[type="text"] {
-  all: unset;
-  display: inline-block;
-  width: 100%;
-  box-sizing: border-box;
-}*/
-
 button {
   background: none;
   border: none;

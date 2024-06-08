@@ -1,0 +1,15 @@
+.app {
+    background: var(--bg-color);
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: var(--border-color) solid 1px;
+}

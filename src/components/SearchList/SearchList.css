@@ -11,9 +11,39 @@
 }
 
 .search-list_btns {
-    padding: 6px 0 12px 17px;
+    padding: 8px 36px 8px 10px;
+
     display: flex;
-    gap: 12px;
+    justify-content: space-between;
+
+    background: var(--bg-color);
+}
+
+.search-list_btn {
+    padding: 4px 2px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 8px;
+
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: IBMPlexMonoRegular;
+    text-transform: uppercase;
+}
+
+.search-list_btn:hover {
+    background-color: var(--bg-color-hover);
+}
+
+.search-list_btn-open {
+    font-family: IBMPlexMonoSemiBold;
+}
+
+.search-list_btn-open:hover {
+    background-color: transparent;
 }
 
 .coins-ul {
@@ -26,18 +56,28 @@
 }
 
 .coins-li {
-    padding: 6px 0 6px 25px;
+    padding: 10px 12px;
 
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
 
     border-radius: 8px;
 
     color: var(--text-color);
+    font-size: 15px;
     font-family: IBMPlexMonoRegular;
+    cursor: pointer;
 }
 
 .coins-li:hover {
     background: var(--bg-color-hover);
+}
+
+.no-results {
+    padding: 12px;
+
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: IBMPlexMonoRegular;
 }

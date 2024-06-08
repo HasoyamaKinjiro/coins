@@ -1,8 +1,13 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, { useState } from 'react';
 import './SearchList.css';
-import {CoinI} from '../../types';
-import SearchButton from '../ui/SearchButton';
-import Coin from '../Coin';
+import IconsSvg from '../../assets/icons.svg';
+import VirtualList from './VirtualList';
+
+interface CoinI {
+    id: number;
+    name: string;
+    favorite: boolean;
+}
 
 interface SearchListProps {
     coins: CoinI[];
@@ -16,8 +21,6 @@ const SearchList = ({ coins }: SearchListProps) => {
         }, {} as Record<number, boolean>)
     );
     const [showFavorites, setShowFavorites] = useState(false);
-    const rootRef = useRef<HTMLUListElement>(null);
-    const [start, setStart] = useState(0);
 
     const toggleFavorite = (id: number) => {
         setFavorites(prevState => {
@@ -28,69 +31,56 @@ const SearchList = ({ coins }: SearchListProps) => {
     };
 
     const switchButton = (show: boolean) => {
-        if (show) setStart(0)
         setShowFavorites(show);
     }
 
-    const rowHeight = 28;
-    const visibleRows = 9;
-
-    function getTopHeight() {
-        return rowHeight * start;
-    }
-
-    function getBottomHeight() {
-        return rowHeight * (coins.length - (start + visibleRows));
-    }
-
-    function onScroll(e: any) {
-        setStart(Math.floor(e.target.scrollTop / rowHeight))
-    }
-
-    useEffect(() => {
-        const currentRef = rootRef.current;
-        if (currentRef) {
-            currentRef.addEventListener('scroll', onScroll);
-
-            return () => currentRef.removeEventListener('scroll', onScroll);
-        }
-    }, []);
-
     const filteredCoins = showFavorites ? coins.filter(coin => favorites[coin.id]) : coins;
 
-    const renderedCoins = filteredCoins
-        .slice(start, start + visibleRows + 1)
-        .map(coin => (
-        <Coin
-            name={coin.name}
-            isFavorite={favorites[coin.id]}
+    const renderCoinItem = (coin: CoinI) => (
+        <li className="coins-li"
+            onClick={() => toggleFavorite(coin.id)}
             key={coin.id}
-            toggleFavorite={() => toggleFavorite(coin.id)}
-        />
-    ));
+        >
+            <svg width="16" height="16">
+                <use href={`${IconsSvg}${favorites[coin.id] ? "#icon-StarFull" : "#icon-StarEmpty"}`}></use>
+            </svg>
+            <span style={{ userSelect: 'text' }}>{coin.name}</span>
+        </li>
+    );
 
     return (
         <div className="search-list">
             <div className="search-list_btns">
-                <SearchButton
-                    title="favorites"
-                    svg={{
-                        iconId: "#icon-StarFull",
-                        width: 16,
-                        height: 16
-                    }}
+                <button
+                    className={`search-list_btn ${showFavorites && 'search-list_btn-open'}`}
                     onClick={() => switchButton(true)}
-                />
-                <SearchButton
-                    title="all coins"
+                >
+                    <svg width="16" height="16">
+                        <use href={IconsSvg + "#icon-StarFull"}></use>
+                    </svg>
+                    favorites
+                </button>
+                <button
+                    className={`search-list_btn ${!showFavorites && 'search-list_btn-open'}`}
                     onClick={() => switchButton(false)}
-                />
+                >
+                    all coins
+                </button>
             </div>
-            <ul className="coins-ul" ref={rootRef}>
-                <div style={{height: getTopHeight()}}/>
-                {renderedCoins}
-                <div style={{height: getBottomHeight()}}/>
-            </ul>
+            {filteredCoins.length > 0 ? (
+                <VirtualList
+                    items={filteredCoins}
+                    itemHeight={28}
+                    renderItem={renderCoinItem}
+                    showFavorites={showFavorites}
+                />
+            ) : (
+                showFavorites ? (
+                    <div className="no-results">Sorry, it seems like you don't have any favorite coins. =(</div>
+                ) : (
+                    <div className="no-results">Sorry, it seems like we can't find your coin. =(</div>
+                )
+            )}
         </div>
     );
 };

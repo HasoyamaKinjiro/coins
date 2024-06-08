@@ -14,8 +14,8 @@ const SearchInput = ({ value, onChange }: SearchInputProps) => {
         <div className="search-form">
             <SearchIcon
                 color={isFocused ? `var(--text-color)` : `var(--border-color)`}
-                width="18"
-                height="18"
+                width="16"
+                height="16"
             />
             <input
                 className="search-input"
@@ -25,7 +25,7 @@ const SearchInput = ({ value, onChange }: SearchInputProps) => {
                 onChange={onChange}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
-                placeholder="Search..."
+                placeholder="Search…"
             />
         </div>
     );
