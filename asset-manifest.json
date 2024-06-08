@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/coins/static/css/main.1db57235.css",
-    "main.js": "/coins/static/js/main.02ef8a4c.js",
+    "main.js": "/coins/static/js/main.bed5ff32.js",
     "static/media/IBMPlexMono-SemiBold.ttf": "/coins/static/media/IBMPlexMono-SemiBold.5f82c3b8863d23615092.ttf",
     "static/media/IBMPlexMono-Bold.ttf": "/coins/static/media/IBMPlexMono-Bold.270fc7685a99d1197e53.ttf",
     "static/media/IBMPlexMono-Medium.ttf": "/coins/static/media/IBMPlexMono-Medium.e44b6da17070f5fecd5b.ttf",
@@ -9,10 +9,10 @@
     "static/media/icons.svg": "/coins/static/media/icons.0d7cefdaf5aef8f1227394c3a12787c2.svg",
     "index.html": "/coins/index.html",
     "main.1db57235.css.map": "/coins/static/css/main.1db57235.css.map",
-    "main.02ef8a4c.js.map": "/coins/static/js/main.02ef8a4c.js.map"
+    "main.bed5ff32.js.map": "/coins/static/js/main.bed5ff32.js.map"
   },
   "entrypoints": [
     "static/css/main.1db57235.css",
-    "static/js/main.02ef8a4c.js"
+    "static/js/main.bed5ff32.js"
   ]
 }
